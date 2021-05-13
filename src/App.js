@@ -15,23 +15,29 @@ function App() {
     .then(data => setUsers(data.results));
   },[])
 
-  const [userInfo, setUserInfo] = useState([]);
+  const [teams, setTeams] = useState([]);
   const addMember = (name) => {
-    setUserInfo(name);
+    setTeams([...teams, name]);
   }
 
   return (
     <div className="content-area">
       <div className="container">
         <div className="row">
+          <div className="col text-center mt-5">
+              <h2>Team Builder</h2>
+              <hr />
+          </div>
+        </div>
+        <div className="row">
           <div className="col-lg-7 pt-5 pb-5">
             {
               users.map(user => <User user={user} addMember={addMember}></User>)
             }
           </div>
-          <div className="col-lg-4 offset-lg-1">
+          <div className="col-lg-4 offset-lg-1  pt-5 pb-5">
             {
-              userInfo.map(userIn => <UserDetail userIn={userIn}></UserDetail>)
+              teams.map(team => <UserDetail team={team}></UserDetail>)
             }
           </div>
         </div>

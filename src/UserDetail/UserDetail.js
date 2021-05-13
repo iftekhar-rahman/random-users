@@ -5,7 +5,7 @@ const UserDetail = (props) => {
     // const [fullName] = props.userIn;
     return (
         <div>
-            <h2>Name: {props.userIn}</h2>
+            <h2>Name: {props.team}</h2>
         </div>
     );
 };
